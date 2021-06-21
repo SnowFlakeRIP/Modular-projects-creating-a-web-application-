@@ -1,0 +1,274 @@
+@import 'vars';
+@import 'fonts';
+@import 'reset';
+@import 'libs';
+@import 'global';
+
+
+.header{
+    &__inner{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 120px;
+    }
+    &__btn{
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+    }
+}
+.logo{
+    margin: 0 auto;
+}
+.menu{
+    padding-right: 15px;
+    &__list{
+        display: flex;
+    }
+    &__list-item{
+        padding-left: 35px;
+        padding-right: 45px;
+    }
+    &__list-link{
+        @extend %title-font;
+        color: rgba(54, 56, 56, 0.9);
+        line-height: 22px;
+    }
+    &__list-link--active{
+        padding-bottom: 4px;
+        position: relative;
+        &::after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            height: 2px;
+            border-radius: 1px;
+            background-color: rgba($title, .7);
+        }
+    }
+}
+
+.footer{
+    &__content{
+        background: #DFDFDF;
+        padding: 60px 0px 80px;
+
+    }
+    &__inner{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__info{
+        width: 540px;
+    }
+    &__info-title{
+        color: $title;
+        @extend %title-font;
+        margin-bottom: 14px;
+        line-height: 23px;
+    }
+    &__info-text{
+        margin-bottom: 16px;
+        max-width: 475px;
+    }
+    &__info-email{
+        font-weight: 600;
+        font-size: 14px;
+        color: $title;
+        margin-bottom: 22px;
+        padding-left: 30px;
+        display: inline-block;
+        position: relative;
+        &::before{
+            content: '';
+            background-image: url(../images/envelope.svg);
+            left: 0;
+            top: 8px;
+            width: 16px;
+            height: 12px;
+            position: absolute;
+        }
+    }
+    &__form{
+        display: flex;
+    }
+    &__form-input{
+        padding: 6px 10px 6px 18px;
+        border-radius: 21px;
+        background-color: transparent;
+        border: 1px solid rgba($title, .7);
+        width: 100%;
+        &::placeholder{
+            font-weight: 400;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            line-height: 27;
+            color: #a1a1a1;
+        }
+    }
+    &__form-button{
+        background-color: $title;
+        border: none;
+        color: #fffff0;
+        border-radius: 21px;
+        font-weight: 600;
+        padding: 6px 12px;
+        min-width: 160px;
+        margin-left: 9px;
+        cursor: pointer;
+    }
+    &__social{
+        width: 125px;
+        margin-right: auto;
+        margin-left: 100px;
+    }
+    &__social-link{
+        padding-left: 28px;
+        position: relative;
+        &::before{
+            content: '';
+            background-image: url();
+            left: 0;
+            top: 3px;
+            width: 16px;
+            height: 16px;
+            position: absolute;
+        }
+    }
+    &__social-link--facebook::before{
+        background-image: url(../images/facebook.svg);
+    }
+    &__social-link--instagram::before{
+        background-image: url(../images/instagram.svg);
+        width: 14px;
+        height: 14px;
+        top: 4px;
+    }
+    &__social-link--pinterest::before{
+        background-image: url(../images/Pinterest.svg);
+    }
+    &__social-link--whatsApp::before{
+        background-image: url(../images/whatsapp.svg);
+        width: 14px;
+        height: 14px;
+    }
+    &__social-link--youtube::before{
+        background-image: url(../images/youtube.svg);
+        width: 18px;
+        height: 12px;
+        top: 4px;
+    }
+    &__social-item,
+    &__menu-item{
+        margin-bottom: 15px;
+        font-weight: 600;
+        font-size: 14px;
+    }
+    &__social-link,
+    &__menu-link{
+        color: #707070;
+    }
+    &__menu{
+        margin-right: 60px;
+        width: 125px;
+    }
+    &__copyright{
+        background-color: $title;
+        color: #A1A1A1;
+        text-align: center;
+        padding: 42px 0px 41px;
+    }
+}
+
+.rightside-menu{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    max-width: 694px;
+    width: 100%;
+    background-color: #fff;
+    padding-top: 40px;
+    box-shadow: -3px -2px 17px 0px #000;
+    transition: all .3s;
+    z-index: 10;
+    &.rightside-menu--close{
+       transform: translateX(+500%); /*когда .rightside-menu и .rightside-menu--close вместе соаюатывает transform*/
+    }
+    &__close{
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        margin-left: 50px;
+        cursor: pointer;
+        margin-bottom: 60px;
+    }
+    &__content{
+        text-align: center;
+        max-width: 485px;
+        margin: 0 auto;
+    }
+    &__logo{
+        margin-bottom: 40px;
+        display: inline-block;
+    }
+    &__title{
+        color: $title;
+        @extend %title-font;
+        font-size: 36px;
+        line-height: 51px;
+        position: relative;
+        margin-bottom: 17px;
+        padding-bottom: 17px;
+        &::after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            max-width: 252px;
+            margin: 0 auto;
+            height: 1px;
+            background: #6D7278;
+        }
+    }
+    &__text{
+        margin-bottom: 75px;
+    }
+    &__images{
+        max-width: 485px;
+    }
+
+}
+.content{
+    padding-top: 50px;
+}
+
+.about{
+    &__popup-one{
+        background-image: url(../img/video/popupbg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top center;
+        min-height: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    &__popup-two{
+        background-image: url(../img/video/yvz.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top center;
+        min-height: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+}
